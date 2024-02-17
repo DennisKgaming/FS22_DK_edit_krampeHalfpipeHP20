@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<i3D name="Flash2.i3d" version="1.6" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://i3d.giants.ch/schema/i3d-1.6.xsd">
+  <Asset>
+    <Export program="GIANTS Editor 64bit" version="9.0.4"/>
+  </Asset>
+
+  <Files>
+    <File fileId="4" filename="$data/shaders/vehicleShader.xml"/>
+    <File fileId="8" filename="$data/shared/window02_diffuse.dds"/>
+    <File fileId="2" filename="rearLightOvalLED_01_normal.dds"/>
+    <File fileId="3" filename="rearLightOvalLED_01_specular.dds"/>
+  </Files>
+
+
+  <Materials>
+    <Material name="clearPlastic_mat" materialId="5" alphaBlending="true" customShaderId="4" customShaderVariation="staticLight_multiBlink">
+      <Texture fileId="8"/>
+      <Normalmap fileId="2"/>
+      <Glossmap fileId="3"/>
+      <CustomParameter name="RDT" value="1 1 0 0"/>
+      <CustomParameter name="colorMat0" value="1 1 1 2"/>
+      <CustomParameter name="colorMat1" value="1 0.25 0 2"/>
+      <CustomParameter name="colorMat2" value="0.5 0 0 2"/>
+      <CustomParameter name="blinkOffset" value="3 2 45.05 0"/>
+    </Material>
+    <Material name="rearLightOvalLED_01_mat" materialId="6" diffuseColor="0.494118 0.494118 0.494118 1" customShaderId="4" customShaderVariation="colorMask">
+      <Normalmap fileId="2"/>
+      <Glossmap fileId="3"/>
+      <CustomParameter name="RDT" value="1 1 0 0"/>
+      <CustomParameter name="colorMat0" value="1 1 1 2"/>
+      <CustomParameter name="colorMat1" value="1 0.25 0 2"/>
+      <CustomParameter name="colorMat2" value="0.5 0 0 2"/>
+    </Material>
+    <Material name="rearLightOvalLED_01_mat1" materialId="7" diffuseColor="0.494118 0.494118 0.494118 1" alphaBlending="true" customShaderId="4" customShaderVariation="staticLight">
+      <Normalmap fileId="2"/>
+      <Glossmap fileId="3"/>
+      <CustomParameter name="RDT" value="1 1 0 0"/>
+      <CustomParameter name="colorMat0" value="1 1 1 2"/>
+      <CustomParameter name="colorMat1" value="1 0.25 0 2"/>
+      <CustomParameter name="colorMat2" value="0.5 0 0 2"/>
+      <CustomParameter name="blinkOffset" value="0 0 35 0"/>
+    </Material>
+  </Materials>
+
+
+  <Shapes externalShapesFile="Flash2.i3d.shapes">
+  </Shapes>
+
+
+  <Dynamics>
+  </Dynamics>
+
+  <Scene>
+      <Shape shapeId="1" name="flasher_02" clipDistance="300" nodeId="12" materialIds="6" castsShadows="true" receiveShadows="true">
+        <Shape shapeId="2" name="lightStatic" clipDistance="35" nodeId="13" materialIds="5" castsShadows="true" receiveShadows="true" decalLayer="1">
+          <Light name="realLight" translation="-5.1461e-05 0.0149731 0" rotation="90 -90 0" clipDistance="300" nodeId="14" type="spot" color="1 0.423083 0" emitDiffuse="true" emitSpecular="true" castShadowMap="true" depthMapBias="0.001" depthMapSlopeScaleBias="0.005" depthMapSlopeClamp="0.02" depthMapResolution="256" shadowFarDistance="80" shadowExtrusionDistance="200" pcssLightSize="50" pcssLightDistance="50" pcssDepthBiasFactor="1" pcssMaxPenumbraSize="1" shadowPerspective="false" range="5" coneAngle="100" dropOff="5"/>
+        </Shape>
+        <Shape shapeId="3" name="innerPartStatic" clipDistance="35" nodeId="15" materialIds="7" castsShadows="true" receiveShadows="true" decalLayer="1"/>
+      </Shape>
+  </Scene>
+
+</i3D>

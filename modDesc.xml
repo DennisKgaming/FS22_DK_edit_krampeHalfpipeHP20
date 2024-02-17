@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<modDesc descVersion="60">
+    <author>DennisK</author>
+	
+    <version>1.0.0.0</version>
+    
+	<title>
+        <en>Krampe Halfpipe HP20 DennisK</en>
+    </title>
+    
+	<description>
+        <en>My Mod Description</en>
+    </description>
+    
+	<iconFilename>icons/icon_hp20.png</iconFilename>
+	
+	<multiplayer supported="true"/>
+    
+	<storeItems>
+        <storeItem xmlFilename="xml/hp20.xml"/>
+    </storeItems>
+	
+	<extraSourceFiles>
+        <sourceFile filename="scripts/categorizer.lua"/>
+    </extraSourceFiles>
+	
+	<newcategory name="DennisKtools" title="DennisK" type="TOOL" img="Categories/CategoryTools.png" />
+	
+</modDesc>
